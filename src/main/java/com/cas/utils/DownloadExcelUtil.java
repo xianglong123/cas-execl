@@ -46,8 +46,6 @@ import java.nio.charset.StandardCharsets;
 public class DownloadExcelUtil {
     private static final Logger log = LoggerFactory.getLogger(DownloadExcelUtil.class);
 
-    private static final String FILE_PATH = "excelmodel/";
-
 
     public static void downAchievementTemplate(
             HttpServletRequest request,
@@ -58,7 +56,7 @@ public class DownloadExcelUtil {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/vnd.ms-excel;charset=utf-8");
         try {
-            InputStream inputStream = DownloadExcelUtil.class.getClassLoader().getResourceAsStream(FILE_PATH + fileName);
+            InputStream inputStream = DownloadExcelUtil.class.getClassLoader().getResourceAsStream(fileName);
             String userAgent = request.getHeader("User-Agent");
             if (userAgent.contains("MSIE") || userAgent.contains("Trident")) {
                 fileName = URLEncoder.encode(fileName, "UTF-8");
