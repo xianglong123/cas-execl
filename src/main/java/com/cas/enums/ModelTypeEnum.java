@@ -13,6 +13,7 @@ public enum ModelTypeEnum {
      */
     SIMPLE("excelmodel/simple.xlsx", "简单模版"),
     FILL("excelmodel/fill.xlsx", "需要填充模版"),
+    FILL_LIST("excelmodel/list.xlsx", "需要填充模版"),
     COMPLEX("excelmodel/complex.xlsx", "复杂模版-多sheet"),
     ;
 
