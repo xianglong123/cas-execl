@@ -25,19 +25,16 @@ dependencies {
 
     //hutool
     implementation("cn.hutool:hutool-all:5.7.7")
-    // excel
+    // easyExcel
     implementation 'com.alibaba:easyexcel:3.0.5'
 
     // swagger
     implementation 'io.springfox:springfox-swagger2:2.9.2'
     implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 
-    // easypoi
-    testImplementation group: 'cn.afterturn', name: 'easypoi', version: '4.0.0'
-    testImplementation group: 'cn.afterturn', name: 'easypoi-base', version: '4.0.0'
-    testImplementation group: 'cn.afterturn', name: 'easypoi-annotation', version: '4.0.0'
-    testImplementation group: 'cn.afterturn', name: 'easypoi-web', version: '4.0.0'
-
+    // easyPoi
+    implementation 'cn.afterturn:easypoi-spring-boot-starter:4.0.0'
+    implementation 'cn.afterturn:easypoi-base:4.1.0'
 }
 
 test {
