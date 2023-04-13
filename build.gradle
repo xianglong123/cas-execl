@@ -25,6 +25,7 @@ dependencies {
 
     //hutool
     implementation("cn.hutool:hutool-all:5.7.7")
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.68'
     // easyExcel
     implementation 'com.alibaba:easyexcel:3.0.5'
 
