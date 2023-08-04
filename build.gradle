@@ -36,6 +36,8 @@ dependencies {
     // easyPoi
     implementation 'cn.afterturn:easypoi-spring-boot-starter:4.0.0'
     implementation 'cn.afterturn:easypoi-base:4.1.0'
+    implementation 'commons-fileupload:commons-fileupload:1.5'
+
 }
 
 test {
