@@ -11,13 +11,15 @@ import com.alibaba.excel.write.metadata.WriteSheet;
 import com.cas.listener.ErrQueryDeatilService;
 import com.cas.listener.ReadDataListener;
 import com.cas.po.SimpleReadData;
-import com.cas.po.SimpleWriteData;
-import com.cas.utils.CardVersionEnum;
+import com.cas.service.DicpUserOpenServiceImpl;
 import com.cas.utils.Contexts;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,6 +29,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -45,6 +48,8 @@ public class ReadController {
     @Resource
     private ErrQueryDeatilService queryDeatilService;
 
+    @Resource
+    private DicpUserOpenServiceImpl dicpUserOpenService;
 
 
     @ApiOperation(value="[SIMPLE]读取文档中数据", notes = "采用model文档上传解析",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
@@ -73,8 +78,8 @@ public class ReadController {
     @ApiOperation(value="[SIMPLE]读取文档中数据", notes = "采用model文档上传解析",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @PutMapping("simpleReadSzt")
     public String simpleReadSzt() throws FileNotFoundException {
-        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode("0e00bca58b4b9243e0550dd9d22ff785"));
-        File file = new File("/Users/xianglong/Desktop/4444.xlsx");
+        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode(""));
+        File file = new File("/Users/xianglong/Desktop/2222.xlsx");
         File out = new File("/Users/xianglong/Desktop/3333.xlsx");
         ExcelWriter excelWriter = EasyExcel.write(out, Demo.class).build();
         WriteSheet writeSheet = EasyExcel.writerSheet(0, "模板" + 7).build();
@@ -83,30 +88,42 @@ public class ReadController {
         List<Demo> list = new ArrayList<>();
         EasyExcel.read(fis, Demo.class, new PageReadListener<Demo>(dataList -> {
             dataList.forEach(x -> {
-                System.out.println(index.incrementAndGet());
+                try {
 
-                ErrQueryDeatilService.MobileObj detail = queryDeatilService.getMobileDetail(x.getMobileNo());
-                if (detail != null) {
-                     x.setCardVersion(CardVersionEnum.getCardVersionBySeid(detail.getSeid()));
+                    x.setTime(SM4.decryptStr(x.getTime()));
+                } catch (Exception e) {
+                    System.out.println("有问题：" + x.getTime());
+//                    throw new RuntimeException(e);
                 }
-
-//                ErrQueryDeatilService.DsopObj obj = queryDeatilService.getErrInfo(x.getMobileNo());
-//                if (obj != null) {
-//                    x.setErrInfo(obj.getResultDescription());
-//                    x.setSeid(obj.getSeid());
-//                    x.setBeginTime(obj.getBeginTime());
-//                    x.setEndTime(obj.getEndTime());
-//                    x.setCommunicateType(obj.getCommunicateType());
-//                }
             });
             list.addAll(dataList);
-        })).sheet(0).headRowNumber(0).doRead();
+        })).sheet(0).headRowNumber(1).doRead();
+
         excelWriter.write(list, writeSheet);
         excelWriter.finish();
         System.out.println(index);
         return "success";
     }
 
+    @ApiOperation(value="[SIMPLE]读取文档中数据", notes = "采用model文档上传解析",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    @PostMapping("ss")
+    public String ssss(@RequestBody De de) {
+        System.out.println(de.getTm());
+        return "";
+    }
+
+    class De {
+        @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+        private LocalDateTime tm;
+
+        public LocalDateTime getTm() {
+            return tm;
+        }
+
+        public void setTm(LocalDateTime tm) {
+            this.tm = tm;
+        }
+    }
 
     private String getCardType(String seid) {
         String versionType = seid.substring(6, 8);
@@ -127,41 +144,37 @@ public class ReadController {
 
     public static class Demo {
 
-        private String index;
-        private String mobileNo;
-        private String name;
+        private String time;
         private String a;
         private String b;
         private String c;
         private String d;
         private String e;
         private String f;
-        private String cardVersion;
-        private String type;
         private String g;
+        private String h;
+        private String i;
+        private String j;
+        private String k;
+        private String l;
+        private String m;
+        private String n;
+        private String o;
+        private String p;
+        private String q;
+        private String r;
+        private String s;
+        private String t;
+        private String u;
+        private String v;
+        private String w;
 
-        public String getIndex() {
-            return index;
+        public String getTime() {
+            return time;
         }
 
-        public void setIndex(String index) {
-            this.index = index;
-        }
-
-        public String getMobileNo() {
-            return mobileNo;
-        }
-
-        public void setMobileNo(String mobileNo) {
-            this.mobileNo = mobileNo;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
+        public void setTime(String time) {
+            this.time = time;
         }
 
         public String getA() {
@@ -212,28 +225,140 @@ public class ReadController {
             this.f = f;
         }
 
-        public String getCardVersion() {
-            return cardVersion;
-        }
-
-        public void setCardVersion(String cardVersion) {
-            this.cardVersion = cardVersion;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
         public String getG() {
             return g;
         }
 
         public void setG(String g) {
             this.g = g;
+        }
+
+        public String getH() {
+            return h;
+        }
+
+        public void setH(String h) {
+            this.h = h;
+        }
+
+        public String getI() {
+            return i;
+        }
+
+        public void setI(String i) {
+            this.i = i;
+        }
+
+        public String getJ() {
+            return j;
+        }
+
+        public void setJ(String j) {
+            this.j = j;
+        }
+
+        public String getK() {
+            return k;
+        }
+
+        public void setK(String k) {
+            this.k = k;
+        }
+
+        public String getL() {
+            return l;
+        }
+
+        public void setL(String l) {
+            this.l = l;
+        }
+
+        public String getM() {
+            return m;
+        }
+
+        public void setM(String m) {
+            this.m = m;
+        }
+
+        public String getN() {
+            return n;
+        }
+
+        public void setN(String n) {
+            this.n = n;
+        }
+
+        public String getO() {
+            return o;
+        }
+
+        public void setO(String o) {
+            this.o = o;
+        }
+
+        public String getP() {
+            return p;
+        }
+
+        public void setP(String p) {
+            this.p = p;
+        }
+
+        public String getQ() {
+            return q;
+        }
+
+        public void setQ(String q) {
+            this.q = q;
+        }
+
+        public String getR() {
+            return r;
+        }
+
+        public void setR(String r) {
+            this.r = r;
+        }
+
+        public String getS() {
+            return s;
+        }
+
+        public void setS(String s) {
+            this.s = s;
+        }
+
+        public String getT() {
+            return t;
+        }
+
+        public void setT(String t) {
+            this.t = t;
+        }
+
+        public String getU() {
+            return u;
+        }
+
+        public void setU(String u) {
+            this.u = u;
+        }
+
+        public String getV() {
+            return v;
+        }
+
+        public void setV(String v) {
+            this.v = v;
+        }
+
+        public String getW() {
+            return w;
+        }
+
+        public void setW(String w) {
+            this.w = w;
         }
     }
 
