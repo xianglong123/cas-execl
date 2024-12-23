@@ -78,7 +78,7 @@ public class ReadController {
     @ApiOperation(value="[SIMPLE]手机号解密", notes = "手机号解密",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @PutMapping("simpleReadSzt")
     public String simpleReadSzt() throws FileNotFoundException {
-        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode("0e00bca58b4b9243e0550dd9d22ff785"));
+        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode(""));
         File file = new File("/Users/xianglong/Desktop/2222.xlsx");
         File out = new File("/Users/xianglong/Desktop/3333.xlsx");
         ExcelWriter excelWriter = EasyExcel.write(out, Demo.class).build();
