@@ -23,13 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加excel解析能力">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/controller/upload/MoreUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/listener/ErrQueryDeatilService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/DicpUserOpenServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/CodeSJDecode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/CustomConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cas-execl.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ThreadPoolReadExcelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" afterDir="false" />
     </list>
@@ -100,13 +99,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build cas-execl.executor": "Run",
+    "Gradle.cas-execl [:ExcelTest.main()].executor": "Run",
     "Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor": "Run",
+    "Gradle.cas-execl [:ReadExcelTest.main()].executor": "Run",
+    "Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor": "Debug",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ExcelApplication.executor": "Debug",
     "WebServerToolWindowFactoryState": "false",
     "kotlin-language-version-configured": "true",
@@ -129,19 +132,20 @@
       <recent name="$PROJECT_DIR$/src/main/resources/excelmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cas" />
       <recent name="com.cas.utils" />
       <recent name="com.cas.controller.easyExcel" />
       <recent name="com.cas.po" />
       <recent name="com.cas.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ModifyDocxCreationTime">
-    <configuration name="ExcelExporter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.controller.easyPoi.ExcelExporter" />
-      <module name="cas-execl.main" />
+  <component name="RunManager" selected="Application.ExcelTest">
+    <configuration name="ExcelTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
+      <module name="cas-execl.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cas.controller.easyPoi.*" />
+          <option name="PATTERN" value="com.cas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,12 +153,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExportExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.utils.ExportExcel" />
-      <module name="cas-execl.main" />
+    <configuration name="ExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
+      <module name="cas-execl.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cas.listener.*" />
+          <option name="PATTERN" value="com.cas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,12 +166,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModifyDocxCreationTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.controller.word.ModifyDocxCreationTime" />
-      <module name="cas-execl.main" />
+    <configuration name="ReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.ReadExcelTest" />
+      <module name="cas-execl.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cas.controller.word.*" />
+          <option name="PATTERN" value="com.cas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -175,27 +179,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="cas-execl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
+    <configuration name="ThreadPoolReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.ThreadPoolReadExcelTest" />
+      <module name="cas-execl.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ExcelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cas-execl.main" />
@@ -212,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ModifyDocxCreationTime" />
         <item itemvalue="Spring Boot.ExcelApplication" />
-        <item itemvalue="Gradle.cas-execl [build]" />
-        <item itemvalue="Application.ExportExcel" />
-        <item itemvalue="Application.ExcelExporter" />
+        <item itemvalue="Application.ThreadPoolReadExcelTest" />
+        <item itemvalue="Application.ReadExcelTest" />
+        <item itemvalue="Application.ExcelTest (1)" />
+        <item itemvalue="Application.ExcelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -297,6 +292,11 @@
       <workItem from="1729483293135" duration="594000" />
       <workItem from="1729583380301" duration="335000" />
       <workItem from="1730286474907" duration="2906000" />
+      <workItem from="1731484978439" duration="233000" />
+      <workItem from="1732860007438" duration="183000" />
+      <workItem from="1733127440778" duration="294000" />
+      <workItem from="1734332640638" duration="8937000" />
+      <workItem from="1734425077151" duration="16991000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -392,6 +392,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/cas/controller/upload/MoreUploadController.java</url>
           <line>22</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

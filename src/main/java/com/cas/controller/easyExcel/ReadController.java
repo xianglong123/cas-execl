@@ -75,10 +75,10 @@ public class ReadController {
         }
         return "success";
     }
-    @ApiOperation(value="[SIMPLE]读取文档中数据", notes = "采用model文档上传解析",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    @ApiOperation(value="[SIMPLE]手机号解密", notes = "手机号解密",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @PutMapping("simpleReadSzt")
     public String simpleReadSzt() throws FileNotFoundException {
-        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode(""));
+        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode("0e00bca58b4b9243e0550dd9d22ff785"));
         File file = new File("/Users/xianglong/Desktop/2222.xlsx");
         File out = new File("/Users/xianglong/Desktop/3333.xlsx");
         ExcelWriter excelWriter = EasyExcel.write(out, Demo.class).build();
