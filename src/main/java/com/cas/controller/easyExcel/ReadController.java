@@ -10,9 +10,11 @@ import com.alibaba.excel.read.metadata.ReadSheet;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.cas.listener.ErrQueryDeatilService;
 import com.cas.listener.ReadDataListener;
+import com.cas.po.DatabaseMetadataBO;
 import com.cas.po.SimpleReadData;
 import com.cas.service.DicpUserOpenServiceImpl;
 import com.cas.utils.Contexts;
+import com.cas.utils.DataLevelClassifier;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -78,8 +80,35 @@ public class ReadController {
     @ApiOperation(value="[SIMPLE]手机号解密", notes = "手机号解密",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @PutMapping("simpleReadSzt")
     public String simpleReadSzt() throws FileNotFoundException {
-        cn.hutool.crypto.symmetric.SM4 SM4 = new SM4(SecureUtil.decode(""));
-        File file = new File("/Users/xianglong/Desktop/2222.xlsx");
+//        return descryptMobileNo(); // 手机号解密
+        return simCardProcess(); // sim卡处理
+    }
+
+    private static String simCardProcess() throws FileNotFoundException {
+        File file = new File("/Users/xianglong/Desktop/1111.xlsx");
+        File out = new File("/Users/xianglong/Desktop/3333.xlsx");
+        ExcelWriter excelWriter = EasyExcel.write(out, DatabaseMetadataBO.class).build();
+        WriteSheet writeSheet = EasyExcel.writerSheet(0, "模板" + 7).build();
+        FileInputStream fis = new FileInputStream(file);
+        AtomicInteger index = new AtomicInteger();
+        List<DatabaseMetadataBO> list = new ArrayList<>();
+        EasyExcel.read(fis, DatabaseMetadataBO.class, new PageReadListener<DatabaseMetadataBO>(dataList -> {
+            dataList.forEach(x -> {
+                x.setDataCategory(x.getFullClassification());
+                x.setDataLevel(x.getDataLevel());
+            });
+            list.addAll(dataList);
+        })).sheet(0).headRowNumber(0).doRead();
+
+        excelWriter.write(list, writeSheet);
+        excelWriter.finish();
+        System.out.println(index);
+        return "success";
+    }
+
+    private static String descryptMobileNo() throws FileNotFoundException {
+        SM4 SM4 = new SM4(SecureUtil.decode("0e00bca58b4b9243e0550dd9d22ff785"));
+        File file = new File("/Users/xianglong/Desktop/1111.xlsx");
         File out = new File("/Users/xianglong/Desktop/3333.xlsx");
         ExcelWriter excelWriter = EasyExcel.write(out, Demo.class).build();
         WriteSheet writeSheet = EasyExcel.writerSheet(0, "模板" + 7).build();
@@ -97,7 +126,7 @@ public class ReadController {
                 }
             });
             list.addAll(dataList);
-        })).sheet(0).headRowNumber(1).doRead();
+        })).sheet(0).headRowNumber(0).doRead();
 
         excelWriter.write(list, writeSheet);
         excelWriter.finish();

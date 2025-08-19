@@ -38,6 +38,8 @@ dependencies {
     implementation 'cn.afterturn:easypoi-base:4.1.0'
     implementation 'commons-fileupload:commons-fileupload:1.5'
 
+    // pdf转word
+    implementation 'com.luhuiguo:aspose-pdf:22.12'
 }
 
 test {

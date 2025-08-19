@@ -22,15 +22,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加excel解析能力">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/cas-execl.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ThreadPoolReadExcelTest.java" afterDir="false" />
+    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加excel去重能力">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/po/DatabaseMetadataBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/ClassificationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/DataClassificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/IdentityDocumentStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/NaturalPersonStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/NetworkIdentityStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/PasswordRelatedStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/PrivateInfoStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/SecretKeyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/ServiceContentStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/ServiceLogStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/DataClassificationRules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/DataLevelClassifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelRowCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/Pdf2WordTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/PhoneNumberFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadCountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +71,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="cas-execl" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="cas-execl" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -96,63 +105,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build cas-execl.executor": "Run",
-    "Gradle.cas-execl [:ExcelTest.main()].executor": "Run",
-    "Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor": "Run",
-    "Gradle.cas-execl [:ReadExcelTest.main()].executor": "Run",
-    "Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor": "Debug",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ExcelApplication.executor": "Debug",
-    "WebServerToolWindowFactoryState": "false",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/xianglong/IdeaProjects/cas-execl",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.62413794",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "spring.configuration.checksum": "2647e25a60db9c9179338f1cb6505b92",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build cas-execl.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ExcelTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:Pdf2WordTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:PhoneNumberFormatter.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ReadExcelTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ExcelApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xianglong/IdeaProjects/cas-execl&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.62413794&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2647e25a60db9c9179338f1cb6505b92&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/excelmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cas.service.impl" />
       <recent name="com.cas" />
       <recent name="com.cas.utils" />
       <recent name="com.cas.controller.easyExcel" />
       <recent name="com.cas.po" />
-      <recent name="com.cas.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExcelTest">
-    <configuration name="ExcelTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
-      <module name="cas-execl.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ReadExcelTest">
     <configuration name="ExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
       <module name="cas-execl.test" />
@@ -166,8 +164,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.ReadExcelTest" />
+    <configuration name="Pdf2WordTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.Pdf2WordTest" />
       <module name="cas-execl.test" />
       <extension name="coverage">
         <pattern>
@@ -179,8 +177,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadPoolReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.ThreadPoolReadExcelTest" />
+    <configuration name="PhoneNumberFormatter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.PhoneNumberFormatter" />
+      <module name="cas-execl.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cas.ReadExcelTest" />
       <module name="cas-execl.test" />
       <extension name="coverage">
         <pattern>
@@ -207,20 +218,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ExcelApplication" />
-        <item itemvalue="Application.ThreadPoolReadExcelTest" />
         <item itemvalue="Application.ReadExcelTest" />
-        <item itemvalue="Application.ExcelTest (1)" />
         <item itemvalue="Application.ExcelTest" />
+        <item itemvalue="Spring Boot.ExcelApplication" />
+        <item itemvalue="Application.Pdf2WordTest" />
+        <item itemvalue="Application.PhoneNumberFormatter" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-995e55e7" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -297,6 +301,13 @@
       <workItem from="1733127440778" duration="294000" />
       <workItem from="1734332640638" duration="8937000" />
       <workItem from="1734425077151" duration="16991000" />
+      <workItem from="1734935750291" duration="2756000" />
+      <workItem from="1735631494024" duration="2106000" />
+      <workItem from="1736321989959" duration="1708000" />
+      <workItem from="1738979670251" duration="1419000" />
+      <workItem from="1743995878855" duration="263000" />
+      <workItem from="1745734124554" duration="4443000" />
+      <workItem from="1755570314588" duration="7948000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -333,7 +344,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691112490436</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="增加excel去重能力">
+      <option name="closed" value="true" />
+      <created>1734935777067</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734935777067</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增加excel去重能力">
+      <option name="closed" value="true" />
+      <created>1734935888421</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734935888421</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +380,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="easyExcel 案例" />
     <MESSAGE value="增加excel解析能力" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加excel解析能力" />
+    <MESSAGE value="增加excel去重能力" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加excel去重能力" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -394,14 +422,29 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="35" />
+          <line>64</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -409,5 +452,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cas_execl$ExcelApplication.ic" NAME="ExcelApplication Coverage Results" MODIFIED="1745734137773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.cas.*</FILTER>
+    </SUITE>
   </component>
 </project>

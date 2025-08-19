@@ -22,38 +22,63 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ExcelTest {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String name = "A10";
-        String num = "429961-5804";
-        File big = new File("/Users/xianglong/Desktop/DID数据处理/提取数据/数据/浙中_结果-3659755-49416-out/"+name + "-" + num + ".xlsx");
-        File D1 = new File("/Users/xianglong/Desktop/DID数据处理/第二次104W/D1.xlsx");
-        File out = new File("/Users/xianglong/Desktop/DID数据处理/提取数据/数据/浙中_结果-3659755-49416-out/out/"+name+ ".xlsx");
+        File big = new File("/Users/xianglong/Desktop/C完成的需求/统计/DID数据处理/20250429/20250430.xlsx");
+        File directory = new File("/Users/xianglong/Desktop/C完成的需求/统计/DID数据处理/20250107/和包出行/jk");
+        File out = new File("/Users/xianglong/Desktop/C完成的需求/统计/DID数据处理/20250429/20250430-out.xlsx");
         ExcelWriter excelWriter = EasyExcel.write(out).build();
         WriteSheet writeSheet = EasyExcel.writerSheet(0, "模板" + 7).build();
         FileInputStream bigFis = new FileInputStream(big);
-        FileInputStream d1File = new FileInputStream(D1);
+//        FileInputStream d1File = new FileInputStream(single);
         AtomicInteger index = new AtomicInteger();
         Set<String> set = new HashSet<>();
+        // 原始数据
         EasyExcel.read(bigFis, Td.class, new PageReadListener<Td>(dataList -> {
             // 先写小文件
             dataList.forEach(x -> {
                 set.add(x.getMobileNo());
             });
-        })).sheet(0).headRowNumber(1).doRead();
+        })).sheet(0).headRowNumber(0).doRead();
 
-        AtomicInteger count = new AtomicInteger();
-        //
-        EasyExcel.read(d1File, Td.class, new PageReadListener<Td>(dataList -> {
-            // 再筛选大文件
-            dataList.forEach(x -> {
-                if(set.contains(x.getMobileNo())) {
-                    count.getAndIncrement();
-                    System.out.println("重复手机号: " + x.getMobileNo());
-                    set.remove(x.getMobileNo());
+        // 单个文件进行去重复
+//        EasyExcel.read(d1File, Td.class, new PageReadListener<Td>(dataList -> {
+//            // 再筛选大文件
+//            dataList.forEach(x -> {
+//                if(set.contains(x.getMobileNo())) {
+//                    count.getAndIncrement();
+//                    System.out.println("重复手机号: " + x.getMobileNo());
+//                    set.remove(x.getMobileNo());
+//                }
+//            });
+//        })).sheet(0).headRowNumber(0).doRead();
+
+        // 指定目录路径
+        // 检查路径是否存在并且是一个目录
+        if (directory.exists() && directory.isDirectory()) {
+            AtomicInteger count = new AtomicInteger();
+            // 获取目录中的所有文件和子目录
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    long start = System.currentTimeMillis();
+                    EasyExcel.read(file, More.class, new PageReadListener<More>(dataList -> {
+                        // 再筛选大文件
+                        dataList.forEach(x -> {
+                            if(set.contains(x.getMobileNo())) {
+                                count.getAndIncrement();
+                                System.out.println("重复手机号: " + x.getMobileNo());
+                                set.remove(x.getMobileNo());
+                            }
+                        });
+                    })).sheet(0).headRowNumber(1).doRead();
+                    long end = System.currentTimeMillis();
+                    System.out.println(file.getName() + " 重复数据量: " + count + " 耗时：" + (end - start));
+                    count.set(0);
                 }
-            });
-        })).sheet(0).headRowNumber(1).doRead();
+            }
+        } else {
+            System.out.println("指定的路径不存在或不是一个目录");
+        }
 
-        System.out.println("重复数据量: " + count);
         // 将 Set 转换为 List
         List<Td> list = new ArrayList<>();
         set.forEach(x -> list.add(new Td(x)));
@@ -61,6 +86,31 @@ public class ExcelTest {
         excelWriter.write(list, writeSheet);
         excelWriter.finish();
         System.out.println(index);
+    }
+
+    public static class More {
+
+        public More() {
+        }
+
+        private String seid;
+        private String mobileNo;
+
+        public String getSeid() {
+            return seid;
+        }
+
+        public void setSeid(String seid) {
+            this.seid = seid;
+        }
+
+        public String getMobileNo() {
+            return mobileNo;
+        }
+
+        public void setMobileNo(String mobileNo) {
+            this.mobileNo = mobileNo;
+        }
     }
 
     public static class Td {
@@ -73,6 +123,15 @@ public class ExcelTest {
         }
 
         private String mobileNo;
+        private String sf;
+
+        public String getSf() {
+            return sf;
+        }
+
+        public void setSf(String sf) {
+            this.sf = sf;
+        }
 
         public String getMobileNo() {
             return mobileNo;
