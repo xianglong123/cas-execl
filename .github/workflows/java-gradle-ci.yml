@@ -32,13 +32,6 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
 
-      # 6. 显示生成的 JAR 文件信息
-      - name: Show JAR info
-        run: |          echo "=== Generated JAR files ==="
-          ls -lh build/libs/
-          echo "=== JAR file size ==="
-          du -sh build/libs/*.jar
-
       # 5. 上传构建好的 Jar 包 (产物一般在 build/libs 目录下)
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
