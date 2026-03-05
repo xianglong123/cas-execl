@@ -22,13 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加excel去重能力">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/java-gradle-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/cas-execl.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加github的CI能力">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +95,7 @@
     "Gradle.cas-execl [:PhoneNumberFormatter.main()].executor": "Run",
     "Gradle.cas-execl [:ReadExcelTest.main()].executor": "Run",
     "Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor": "Debug",
+    "Gradle.cas-execl [wrapper].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -135,7 +133,7 @@
       <recent name="com.cas.po" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ExcelApplication">
+  <component name="RunManager" selected="Gradle.cas-execl [wrapper]">
     <configuration name="ExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
       <module name="cas-execl.test" />
@@ -162,19 +160,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PhoneNumberFormatter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cas.PhoneNumberFormatter" />
-      <module name="cas-execl.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReadExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cas.ReadExcelTest" />
       <module name="cas-execl.test" />
@@ -187,6 +172,28 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="cas-execl [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wrapper" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="ExcelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cas-execl.main" />
@@ -203,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.cas-execl [wrapper]" />
         <item itemvalue="Spring Boot.ExcelApplication" />
         <item itemvalue="Application.ReadExcelTest" />
         <item itemvalue="Application.ExcelTest" />
         <item itemvalue="Application.Pdf2WordTest" />
-        <item itemvalue="Application.PhoneNumberFormatter" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +300,7 @@
       <workItem from="1743995878855" duration="263000" />
       <workItem from="1745734124554" duration="4443000" />
       <workItem from="1755570314588" duration="7948000" />
-      <workItem from="1772725669697" duration="751000" />
+      <workItem from="1772725669697" duration="1215000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -346,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734935888421</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增加github的CI能力">
+      <option name="closed" value="true" />
+      <created>1772726437841</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772726437841</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +382,8 @@
     <MESSAGE value="easyExcel 案例" />
     <MESSAGE value="增加excel解析能力" />
     <MESSAGE value="增加excel去重能力" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加excel去重能力" />
+    <MESSAGE value="增加github的CI能力" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加github的CI能力" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
