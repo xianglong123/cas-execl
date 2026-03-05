@@ -23,28 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="增加excel去重能力">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/po/DatabaseMetadataBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/ClassificationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/DataClassificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/IdentityDocumentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/NaturalPersonStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/NetworkIdentityStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/PasswordRelatedStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/PrivateInfoStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/SecretKeyStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/ServiceContentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/service/impl/ServiceLogStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/DataClassificationRules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cas/utils/DataLevelClassifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelRowCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/Pdf2WordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/PhoneNumberFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadCountTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/java-gradle-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/cas-execl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cas/controller/easyExcel/ReadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cas/ExcelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cas/ReadExcelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,39 +89,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build cas-execl.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:ExcelTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:Pdf2WordTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:PhoneNumberFormatter.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:ReadExcelTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ExcelApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/xianglong/IdeaProjects/cas-execl&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.62413794&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2647e25a60db9c9179338f1cb6505b92&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build cas-execl.executor": "Run",
+    "Gradle.cas-execl [:ExcelTest.main()].executor": "Run",
+    "Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor": "Run",
+    "Gradle.cas-execl [:Pdf2WordTest.main()].executor": "Run",
+    "Gradle.cas-execl [:PhoneNumberFormatter.main()].executor": "Run",
+    "Gradle.cas-execl [:ReadExcelTest.main()].executor": "Run",
+    "Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor": "Debug",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ExcelApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/xianglong/IdeaProjects/cas-execl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.62413794",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "2647e25a60db9c9179338f1cb6505b92",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/excelmodel" />
@@ -150,7 +135,7 @@
       <recent name="com.cas.po" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReadExcelTest">
+  <component name="RunManager" selected="Spring Boot.ExcelApplication">
     <configuration name="ExcelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cas.ExcelTest" />
       <module name="cas-execl.test" />
@@ -218,9 +203,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ExcelApplication" />
         <item itemvalue="Application.ReadExcelTest" />
         <item itemvalue="Application.ExcelTest" />
-        <item itemvalue="Spring Boot.ExcelApplication" />
         <item itemvalue="Application.Pdf2WordTest" />
         <item itemvalue="Application.PhoneNumberFormatter" />
       </list>
@@ -308,6 +293,7 @@
       <workItem from="1743995878855" duration="263000" />
       <workItem from="1745734124554" duration="4443000" />
       <workItem from="1755570314588" duration="7948000" />
+      <workItem from="1772725669697" duration="751000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
