@@ -8,6 +8,20 @@ plugins {
 group 'com.cas'
 version '0.0.1-SNAPSHOT'
 
+// 配置生成的 JAR 文件名称
+jar {
+    enabled = true
+    archiveBaseName = 'cas-excel-app'
+    archiveVersion = version
+}
+
+// Spring Boot 可执行 JAR 配置
+bootJar {
+    archiveBaseName = 'cas-excel-boot'
+    archiveVersion = version
+    mainClass = 'com.cas.ExcelApplication'
+}
+
 repositories {
     maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenLocal()
