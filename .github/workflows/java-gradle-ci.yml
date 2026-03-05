@@ -1,3 +1,4 @@
+
 name: Java CI with Gradle
 
 on:
@@ -6,8 +7,8 @@ on:
   pull_request:
     branches: [ "master", "main" ]
   # 添加标签触发，用于发布 Release
-  release:
-    types: [created]
+#  release:
+#    types: [created]
 
 jobs:
   build:
@@ -35,8 +36,7 @@ jobs:
 
       # 5. 显示生成的 JAR 文件信息
       - name: Show JAR info
-        run: |
-          echo "=== Generated JAR files ==="
+        run: |          echo "=== Generated JAR files ==="
           ls -lh build/libs/
 
       # 6. 上传构建好的 Jar 包（作为 Artifact）
@@ -59,3 +59,86 @@ jobs:
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 8. 部署到服务器（仅在 master/main 分支推送时触发）
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Java 环境
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+
+      # 3. 重新打包（确保有最新的 JAR）
+      - name: Build JAR for deployment
+        run: ./gradlew clean bootJar --no-daemon
+
+      # 4. 上传 JAR 文件到服务器
+      - name: Deploy to server via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASS }}
+          source: "build/libs/*.jar"
+          target: "/app/apprun/cas-execl"
+          strip_components: 1
+
+      # 5. 在服务器上重启应用
+      - name: Restart application on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASS }}
+          script: |            echo "=== Starting deployment ==="
+            cd /www/cas-execl
+            
+            # 查找并停止旧进程
+            echo "Stopping old application..."
+            PID=$(ps -ef | grep cas-excel | grep -v grep | awk '{print $2}')
+            if [ -n "$PID" ]; then
+              echo "Killing process $PID"
+              kill -9 $PID
+              sleep 2
+            else
+              echo "No old process found"
+            fi
+            
+            # 备份旧版本（可选）
+            if [ -f "app.jar" ]; then
+              echo "Backing up old version..."
+              cp app.jar app.jar.backup.$(date +%Y%m%d%H%M%S)
+            fi
+            
+            # 更新 jar 包
+            echo "Updating JAR file..."
+            mv *.jar app.jar
+            
+            # 启动新版本
+            echo "Starting new application..."
+            nohup java -jar -Xmx512m app.jar > app.log 2>&1 &
+            
+            # 等待启动
+            sleep 5
+            
+            # 检查是否启动成功
+            if ps -ef | grep app.jar | grep -v grep > /dev/null; then
+              echo "✅ Application started successfully!"
+              tail -n 50 app.log
+            else
+              echo "❌ Application failed to start!"
+              cat app.log
+              exit 1
+            fi
+            
+            echo "=== Deployment completed ==="
