@@ -22,8 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="测试CI/CD">
+    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="测试CI/CD-prd">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +332,7 @@
       <workItem from="1745734124554" duration="4443000" />
       <workItem from="1755570314588" duration="7948000" />
       <workItem from="1772725669697" duration="4836000" />
-      <workItem from="1772764962517" duration="3690000" />
+      <workItem from="1772764962517" duration="4885000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -552,7 +553,31 @@
       <option name="project" value="LOCAL" />
       <updated>1772774863219</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="测试CI/CD-prd">
+      <option name="closed" value="true" />
+      <created>1772775620268</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1772775620268</updated>
+    </task>
+    <task id="LOCAL-00030" summary="测试CI/CD-prd">
+      <option name="closed" value="true" />
+      <created>1772775704932</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1772775704932</updated>
+    </task>
+    <task id="LOCAL-00031" summary="测试CI/CD-prd">
+      <option name="closed" value="true" />
+      <created>1772776505259</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1772776505259</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +605,8 @@
     <MESSAGE value="更新配置2" />
     <MESSAGE value="更新配置3" />
     <MESSAGE value="测试CI/CD" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试CI/CD" />
+    <MESSAGE value="测试CI/CD-prd" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试CI/CD-prd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
