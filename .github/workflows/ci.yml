@@ -39,8 +39,8 @@ jobs:
           # 核心路径配置
           source: "build/libs/*.jar"     # 本地 JAR 路径 (Gradle 默认输出在此)
           target: "/home/app/"           # 服务器目标目录
-          # 递归创建目录 (如果不存在)
-          mkdir: true
+          strip_components: 2  # 重要：去掉 build/libs 这两层，直接把 jar 放进 /home/app
+          overwrite: true
 
       # 5. 登录服务器，重启应用
       - name: 🔁 Restart Application
