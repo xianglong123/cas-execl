@@ -24,6 +24,13 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew clean build -x test
+      # --- 新增步骤：上传构建产物 ---
+      - name: 📦 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: spring-boot-app
+          path: build/libs/*.jar
+
 
   # --- 部署到测试环境 ---
   deploy-test:
@@ -32,6 +39,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     steps:
+      - name: 📁 Checkout Repository
+        uses: actions/checkout@v4
+      # --- 新增步骤：下载构建产物 ---
+      - name: 📥 Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: spring-boot-app
+          path: build/libs/
       - name: 📤 Upload to Test Server
         uses: appleboy/scp-action@v0.1.5
         with:
@@ -68,7 +83,15 @@ jobs:
     runs-on: ubuntu-latest
     environment: prd
     steps:
-      - name: 📤 Upload to Prod Server
+      - name: 📁 Checkout Repository
+        uses: actions/checkout@v4
+      # --- 新增步骤：下载构建产物 ---
+      - name: 📥 Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: spring-boot-app
+          path: build/libs/
+      - name: 📤 Upload to Prd Server
         uses: appleboy/scp-action@v0.1.5
         with:
           host: ${{ secrets.SERVER_IP }}
