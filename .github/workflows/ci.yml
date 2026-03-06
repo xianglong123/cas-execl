@@ -1,9 +1,9 @@
 name: 🚀 SpringBoot CI/CD
 
-# 触发条件：当推送到 main 分支时
+# 触发条件：当推送到 master 分支时
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-deploy:
