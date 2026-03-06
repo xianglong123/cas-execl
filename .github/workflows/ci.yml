@@ -1,4 +1,4 @@
-name: 🚀 Multi-Environment CI/CD
+name: 🚀 SpringBoot CI/CD
 
 on:
   push:
@@ -56,3 +56,31 @@ jobs:
           source: "build/libs/*.jar"
           target: "/home/app/prod/"
           strip_components: 2
+
+      # 5. 登录服务器，重启应用
+      - name: 🔁 Restart Application
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_PRIVATE_KEY }}
+          script: |
+            # 进入 jar 所在目录
+            cd /home/app
+            
+            # 1. 停止旧服务 (根据 jar 名称杀进程)
+            # 注意：这里假设你的 jar 名字是固定的，或者用通配符
+            echo "Stopping old application..."
+            # 查找 java 进程并杀掉 (排除 grep 自身)
+            ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null || true
+            
+            # 2. 启动新服务
+            # 注意：这里需要你根据实际的 jar 名字修改 *.jar
+            echo "Starting new application..."
+            # nohup 后台运行，日志输出到 app.log
+            nohup java -jar /home/app/*.jar > /home/app/app.log 2>&1 &
+            
+            # 3. 检查是否启动成功
+            sleep 5
+            echo "Current running processes:"
+            ps -ef | grep java

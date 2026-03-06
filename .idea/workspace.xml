@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="测试CI/CD">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +331,7 @@
       <workItem from="1745734124554" duration="4443000" />
       <workItem from="1755570314588" duration="7948000" />
       <workItem from="1772725669697" duration="4836000" />
-      <workItem from="1772764962517" duration="3120000" />
+      <workItem from="1772764962517" duration="3690000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -545,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772773834863</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="测试CI/CD">
+      <option name="closed" value="true" />
+      <created>1772774863219</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1772774863219</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
