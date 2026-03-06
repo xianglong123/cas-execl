@@ -35,7 +35,7 @@ jobs:
   # --- 部署到测试环境 ---
   deploy-test:
     needs: build
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/develop/test'
     runs-on: ubuntu-latest
     environment: test
     steps:
