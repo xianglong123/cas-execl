@@ -48,7 +48,7 @@ public class ZipController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "files", value = "压缩多个文件", paramType = "formData", allowMultiple = true, required = true, dataType = "file")
     })
-    @PostMapping("compressionMore5")
+    @PostMapping("compressionMore6")
     public void compressionMore(HttpServletRequest request,
                                HttpServletResponse response,
                                @ApiParam(value = "上传文件", required = true) @RequestParam(value = "files") List<MultipartFile> multipartFiles
