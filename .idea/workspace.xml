@@ -22,10 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="更新配置2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="61dff10a-0c29-4e31-9ed9-a7726e4415ff" name="Default Changelist" comment="更新配置2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,41 +99,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build cas-execl.executor": "Run",
-    "Gradle.cas-execl [:ExcelTest.main()].executor": "Run",
-    "Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor": "Run",
-    "Gradle.cas-execl [:Pdf2WordTest.main()].executor": "Run",
-    "Gradle.cas-execl [:PhoneNumberFormatter.main()].executor": "Run",
-    "Gradle.cas-execl [:ReadExcelTest.main()].executor": "Run",
-    "Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor": "Debug",
-    "Gradle.cas-execl [assemble].executor": "Run",
-    "Gradle.cas-execl [wrapper].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ExcelApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/xianglong/IdeaProjects/cas-execl",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.62413794",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "2647e25a60db9c9179338f1cb6505b92",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build cas-execl.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ExcelTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ModifyDocxCreationTime.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:Pdf2WordTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:PhoneNumberFormatter.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ReadExcelTest.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [:ThreadPoolReadExcelTest.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.cas-execl [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.cas-execl [wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ExcelApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xianglong/IdeaProjects/cas-execl&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.62413794&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2647e25a60db9c9179338f1cb6505b92&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/excelmodel" />
@@ -330,7 +327,7 @@
       <workItem from="1743995878855" duration="263000" />
       <workItem from="1745734124554" duration="4443000" />
       <workItem from="1755570314588" duration="7948000" />
-      <workItem from="1772725669697" duration="4619000" />
+      <workItem from="1772725669697" duration="4836000" />
     </task>
     <task id="LOCAL-00001" summary="easyExcel 案例">
       <created>1670394547207</created>
@@ -463,7 +460,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772731053294</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="更新配置2">
+      <option name="closed" value="true" />
+      <created>1772731550028</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1772731550028</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
